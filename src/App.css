@@ -1,4 +1,7 @@
-header,
-footer {
+header {
   position: sticky !important;
+}
+
+.main-content {
+  margin-bottom: 60px;
 }
