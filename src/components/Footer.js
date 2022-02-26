@@ -1,13 +1,15 @@
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Navbar } from 'react-bootstrap';
 
 function Footer() {
   return (
     <footer className='bg-dark text-white fixed-bottom'>
       <Container>
         <Row>
-          <Col>1 of 3</Col>
-          <Col>2 of 3</Col>
-          <Col>3 of 3</Col>
+          <Col>Github</Col>
+          <Col>
+            <Navbar variant='dark'><Navbar.Brand href='/'>Blog</Navbar.Brand></Navbar>
+          </Col>
+          <Col>Signin as admin</Col>
         </Row>
       </Container>
     </footer>

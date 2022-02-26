@@ -2,8 +2,8 @@ import { Container, Navbar, Nav } from 'react-bootstrap';
 
 function NavBar() {
   return (
-    <header>
-      <Navbar bg='dark' variant='dark' expand='sm' className='fixed-top'>
+    <header className='fixed-top'>
+      <Navbar bg='dark' variant='dark' expand='sm'>
         <Container>
           <Navbar.Brand href='/'>Blog</Navbar.Brand>
           <Nav>
