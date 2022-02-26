@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import _ from 'underscore';
 import moment from 'moment';
+import { Card, Row, Col } from 'react-bootstrap';
 
 function ArticleList() {
   const [articles, setArticles] = useState([]);
@@ -19,19 +20,25 @@ function ArticleList() {
   
   return (
     <div>
+      <h4 className='mb-3'>{`Posts (${articles.length})`}</h4>
       {
         articles
           // .filter((article) => article.published === true)
           .map((article) => {
             return (
-              <div key={article._id}>
-                <p><strong>Title:</strong> {_.unescape(article.title)}</p>
-                <p><strong>Author:</strong> {_.unescape(article.author.username)}</p>
-                <p><strong>Written on:</strong> {moment(article.createdAt).format('MMMM Do YYYY')}</p>
-                <p><strong>Published (only for testing):</strong> {String(article.published)}</p>
-                <p><strong>Text:</strong> {_.unescape(article.text)}</p>
-                <br />
-              </div>
+              <Card style={{ width: '20rem' }} key={article._id}>
+                <Card.Body>
+                  <Card.Title>{_.unescape(article.title)}</Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">
+                    {_.unescape(article.author.username)}&nbsp;
+                    |&nbsp;&nbsp;{moment(article.createdAt).format('MMMM Do YYYY')}
+                  </Card.Subtitle>
+                  <Card.Text>
+                    {_.unescape(article.text).split(' ').slice(0, 20).join(' ') + '...'}
+                  </Card.Text>
+                  <Card.Link href="/">Read More</Card.Link>
+                </Card.Body>
+              </Card>
             );
           })
       }
