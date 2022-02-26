@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap';
 
+import './App.css';
 import ArticleCreate from './components/ArticleCreate';
 import ArticleDisplay from './components/ArticleDisplay';
 import ArticleEdit from './components/ArticleEdit';

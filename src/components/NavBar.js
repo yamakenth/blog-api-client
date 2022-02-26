@@ -2,7 +2,7 @@ import { Container, Navbar, Nav } from 'react-bootstrap';
 
 function NavBar() {
   return (
-    <Navbar bg='dark' variant='dark' expand='sm'>
+    <Navbar bg='dark' variant='dark' expand='sm' className='fixed-top'>
       <Container>
         <Navbar.Brand href='/'>Blog</Navbar.Brand>
         <Nav>
