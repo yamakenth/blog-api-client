@@ -5,6 +5,7 @@ import _ from 'underscore';
 import moment from 'moment';
 
 import CommentDisplay from './CommentDisplay';
+import CommentCreate from './CommentCreate';
 
 function ArticleDisplay() {
   const { id } = useParams();
@@ -39,6 +40,7 @@ function ArticleDisplay() {
         <p>{_.unescape(article.text)}</p>
       </div>
       <CommentDisplay articleid={id}/>
+      <CommentCreate articleid={id}/>
     </div>
   );
 }
