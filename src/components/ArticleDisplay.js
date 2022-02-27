@@ -4,7 +4,7 @@ import axios from 'axios';
 import _ from 'underscore';
 import moment from 'moment';
 
-import CommentSection from './CommentSection';
+import CommentDisplay from './CommentDisplay';
 
 function ArticleDisplay() {
   const { id } = useParams();
@@ -38,7 +38,7 @@ function ArticleDisplay() {
         <hr />
         <p>{_.unescape(article.text)}</p>
       </div>
-      <CommentSection articleid={id}/>
+      <CommentDisplay articleid={id}/>
     </div>
   );
 }

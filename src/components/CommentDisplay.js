@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Card } from 'react-bootstrap';
 import moment from 'moment';
 
-function CommentSection(props) {
+function CommentDisplay(props) {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
@@ -40,4 +40,4 @@ function CommentSection(props) {
   );
 }
 
-export default CommentSection;
+export default CommentDisplay;
