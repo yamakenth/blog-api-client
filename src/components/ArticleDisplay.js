@@ -28,7 +28,7 @@ function ArticleDisplay() {
 
   return (
     <div>
-      <div className='main-article'>
+      <div className='main-article mb-5'>
         <h2>{_.unescape(article.title)}</h2>
         <p className='text-muted mb-0'>By {_.unescape(article.author.username)}</p>
         <p className='text-muted mb-0'>
@@ -38,7 +38,7 @@ function ArticleDisplay() {
         <hr />
         <p>{_.unescape(article.text)}</p>
       </div>
-      <CommentSection />
+      <CommentSection articleid={id}/>
     </div>
   );
 }

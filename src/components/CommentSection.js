@@ -1,7 +1,40 @@
-function CommentSection() {
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { Card } from 'react-bootstrap';
+
+function CommentSection(props) {
+  const [comments, setComments] = useState([]);
+
+  useEffect(() => {
+    axios.get(`http://localhost:1000/blog/articles/${props.articleid}/comments`)
+      .then((res) => {
+        setComments(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [props.articleid]);
+  
   return (
     <div>
-      <h1>This is CommentSection</h1>
+      <h6>Comments ({comments.length})</h6>
+      <hr className='mt-1'/>
+      {
+        comments.map((comment) => {
+          return (
+            <Card key={comment._id} className='mb-2'>
+              <Card.Body  className='py-2'>
+                <Card.Text className='text-muted mb-1'>
+                  {comment.author} | {comment.createdAt}
+                </Card.Text>
+                <Card.Text>
+                  {comment.text}
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          );
+        })
+      }
     </div>
   );
 }
