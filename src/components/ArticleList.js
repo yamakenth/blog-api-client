@@ -16,7 +16,6 @@ function ArticleList() {
         console.log(err);
       });
   }, []);
-
   
   return (
     <div>
@@ -27,8 +26,8 @@ function ArticleList() {
             // .filter((article) => article.published === true)
             .map((article) => {
               return (
-                <Col sm={6} md={4} xl={3} className='mb-3 d-flex align-items-stretch'>
-                  <Card key={article._id}>
+                <Col sm={6} md={4} xl={3} className='mb-3 d-flex align-items-stretch' key={article._id}>
+                  <Card>
                     <Card.Body className='d-flex flex-column justify-content-between'>
                       <div className='mb-3'>
                         <Card.Title>{_.unescape(article.title)}</Card.Title>
@@ -41,7 +40,7 @@ function ArticleList() {
                         </Card.Text>
                       </div>
                       <div>
-                        <Card.Link href="/">Read More</Card.Link>
+                        <Card.Link href={`/articles/${article._id}`}>Read More</Card.Link>
                       </div>
                     </Card.Body>
                   </Card>

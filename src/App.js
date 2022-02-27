@@ -16,7 +16,7 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
-      <Container className='main-content'>
+      <Container className='main-content px-3 border-start border-end'>
         <Routes>
           <Route path='/' element={<Navigate replace to='/articles' />} />
           <Route path='/articles' element={<ArticleList />} />

@@ -1,8 +1,14 @@
+#root {
+  background-color: #f3f3f3;
+}
+
 header {
   position: sticky !important;
 }
 
 .main-content {
-  margin-top: 20px;
-  margin-bottom: 60px;
+  background-color: #fff;
+  padding-top: 20px;
+  padding-bottom: 60px;
+  min-height: 90vh;
 }
