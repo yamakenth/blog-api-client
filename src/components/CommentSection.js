@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Card } from 'react-bootstrap';
+import moment from 'moment';
 
 function CommentSection(props) {
   const [comments, setComments] = useState([]);
@@ -25,7 +26,7 @@ function CommentSection(props) {
             <Card key={comment._id} className='mb-2'>
               <Card.Body  className='py-2'>
                 <Card.Text className='text-muted mb-1'>
-                  {comment.author} | {comment.createdAt}
+                  {comment.author} | {moment(comment.createdAt).format('MMMM Do YYYY')}
                 </Card.Text>
                 <Card.Text>
                   {comment.text}
