@@ -24,7 +24,7 @@ function ArticleDisplay() {
       .catch((err) => {
         console.log(err);
       });
-    }, [article, id]);
+    }, [id]);
 
   return (
     <div>
