@@ -4,7 +4,9 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 function CommentCreate() {
-  const [author, setAuthor] = useState('');
+  const [author, setAuthor] = useState(
+    (localStorage.getItem('username')) ? localStorage.getItem('username') : ''
+  );
   const [text, setText] = useState('');
   const { id } = useParams();
   
@@ -43,7 +45,7 @@ function CommentCreate() {
               id='author' 
               name='author'
               required
-              value={(localStorage.getItem('username')) ? localStorage.getItem('username') : author}
+              value={author}
               onChange={handleAuthorChange}
             />
           </Form.Group>
