@@ -12,3 +12,7 @@ header {
   padding-bottom: 60px;
   min-height: 90vh;
 }
+
+.not-published {
+  background-color: #dadada;
+}
