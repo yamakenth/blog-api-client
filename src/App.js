@@ -9,6 +9,7 @@ import ArticleList from './components/ArticleList';
 import Footer from './components/Footer';
 import Login from './components/Login';
 import NavBar from './components/NavBar';
+import Signup from './components/Signup';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/' element={<Navigate replace to='/articles' />} />
           <Route path='/articles' element={<ArticleList />} />
           <Route path='/articles/:id' element={<ArticleDisplay />} />
+          <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
         </Routes>
       </Container>
