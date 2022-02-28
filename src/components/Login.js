@@ -29,6 +29,7 @@ function Login() {
           setError(res.data.message);
         } else {
           localStorage.setItem('token', 'Bearer ' + res.data.token);
+          localStorage.setItem('username', res.data.user.username);
           window.location.replace('/');
         }
       });
