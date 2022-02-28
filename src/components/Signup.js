@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { Form } from 'react-bootstrap';
+import { Form, Alert } from 'react-bootstrap';
+import axios from 'axios';
 
 function Signup() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
+  const [error, setError] = useState('');
 
   function handleUsernameChange(e) {
     setUsername(e.target.value);
@@ -23,14 +25,30 @@ function Signup() {
     const user = {
       username,
       password,
-      passwordConfirm
+      'password-confirm': passwordConfirm
     };
 
-    console.log(user);
+    axios.post(`http://localhost:1000/blog/users/signup`, user)
+      .then((res) => {
+        if (res.data.errors) {
+          setError(res.data.errors[0]);
+        } else {
+          window.location.replace('/');
+        }
+      });
 
     setUsername('');
     setPassword('');
     setPasswordConfirm('');
+  }
+
+  function ErrorMessage() {
+    if (error.length > 0) {
+      return (
+        <Alert variant='danger' className='mt-3'>{error}</Alert>
+      );
+    }
+    return null;
   }
   
   return (
@@ -69,6 +87,7 @@ function Signup() {
         />
       </Form.Group>
       <button type='submit' className='btn btn-primary align-self-center'>Signup</button>
+      <ErrorMessage />
     </Form>
   );
 }
