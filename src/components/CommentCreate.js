@@ -43,7 +43,7 @@ function CommentCreate() {
               id='author' 
               name='author'
               required
-              value={author}
+              value={(localStorage.getItem('username')) ? localStorage.getItem('username') : author}
               onChange={handleAuthorChange}
             />
           </Form.Group>
