@@ -23,12 +23,12 @@ function ArticleList() {
       <Row>
         {
           articles
-            // .filter((article) => article.published === true)
+            .filter((article) => article.published === true)
             .map((article) => {
               return (
                 <Col sm={6} md={4} xl={3} className='mb-3 d-flex align-items-stretch' key={article._id}>
                   <Card>
-                    <Card.Body className={`d-flex flex-column justify-content-between ${(article.published) ? '' : 'not-published'}`}>
+                    <Card.Body className='d-flex flex-column justify-content-between'>
                       <div className='mb-3'>
                         <Card.Title>{_.unescape(article.title)}</Card.Title>
                         <Card.Subtitle className="mb-2 text-muted">
