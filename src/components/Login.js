@@ -28,7 +28,8 @@ function Login() {
         if (res.data.message) {
           setError(res.data.message);
         } else {
-          // window.location.replace('/');
+          localStorage.setItem('token', 'Bearer ' + res.data.token);
+          window.location.replace('/');
         }
       });
 
