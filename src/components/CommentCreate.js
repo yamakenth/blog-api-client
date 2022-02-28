@@ -42,6 +42,7 @@ function CommentCreate() {
               placeholder='Anonymous Lizard' 
               id='author' 
               name='author'
+              required
               value={author}
               onChange={handleAuthorChange}
             />
@@ -53,6 +54,7 @@ function CommentCreate() {
               rows={3} 
               placeholder='Let us know your thoughts' 
               name='text'
+              required
               value={text}
               onChange={handleTextChange}
             />

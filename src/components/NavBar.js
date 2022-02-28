@@ -14,7 +14,7 @@ function UserAuth() {
     localStorage.removeItem('username');
     localStorage.removeItem('token');
     setUsername('');
-    window.location.reload();
+    window.location.href = '/';
   }
   
   if (username.length > 0) {
