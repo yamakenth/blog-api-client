@@ -9,8 +9,7 @@ function NavBar() {
         <Container>
           <Navbar.Brand href='/'><BrandLogo />Blog</Navbar.Brand>
           <Nav>
-            <Nav.Link href='/'><i className='bi bi-person-fill'>&#9;Dummy</i></Nav.Link>
-            <Nav.Link href='/'><i className='bi bi-box-arrow-in-left'>&#9;Dummy</i></Nav.Link>
+            <Nav.Link href='/'><i className='bi bi-file-earmark-plus'>&#9;Create Article</i></Nav.Link>
           </Nav>
         </Container>
       </Navbar>
