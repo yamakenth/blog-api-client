@@ -19,7 +19,7 @@ function ArticleList() {
   
   return (
     <div>
-      <h4 className='mb-3'>{`Posts (${articles.length})`}</h4>
+      <h4 className='mb-3'>{`Posts (${articles.filter((article) => article.published === true).length})`}</h4>
       <Row>
         {
           articles
