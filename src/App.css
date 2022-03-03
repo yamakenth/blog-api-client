@@ -26,3 +26,7 @@ header {
 .nav-username {
   text-decoration: underline;
 }
+
+.article-card-body {
+  min-height: 250px;
+}
