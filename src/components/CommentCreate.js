@@ -4,9 +4,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 function CommentCreate() {
-  const [author, setAuthor] = useState(
-    (localStorage.getItem('username')) ? localStorage.getItem('username') : ''
-  );
+  const [author, setAuthor] = useState('');
   const [text, setText] = useState('');
   const { id } = useParams();
   
@@ -18,19 +16,24 @@ function CommentCreate() {
     setText(e.target.value);
   }
 
-  function handleSubmit() {
+  function handleSubmit(e) {
+    e.preventDefault();
+
     const comment = {
       author,
       text
     };
 
-    axios.post(`http://localhost:1000/blog/articles/${id}/comments`, comment)
-      .then((res) => {
+    axios.post(`https://yamakenth-blog-api-server.herokuapp.com/api/articles/${id}/comments`, comment)
+      .then(res => {
         console.log(res);
+        setAuthor('');
+        setText('');
+        window.location.reload();
+      })
+      .catch(err => {
+        console.log(err);
       });
-
-    setAuthor('');
-    setText('');
   }
 
   return (
