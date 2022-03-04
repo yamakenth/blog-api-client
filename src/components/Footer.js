@@ -15,7 +15,7 @@ function Footer() {
           </Nav>
           <Navbar.Brand as={Link} to='/' className='mx-0'><BrandLogo />Blog</Navbar.Brand>
           <Nav>
-            <Nav.Link href='https://google.com' target='_blank'>
+            <Nav.Link href='https://yamakenth.github.io/blog-api-client-admin/' target='_blank'>
               <i className='bi bi-gear-wide-connected'>&#9;Admin Page</i>
             </Nav.Link>
           </Nav>
