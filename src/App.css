@@ -27,6 +27,6 @@ header {
   text-decoration: underline;
 }
 
-.article-card-body {
+.article-card {
   min-height: 250px;
 }

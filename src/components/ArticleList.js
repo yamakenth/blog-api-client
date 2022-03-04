@@ -8,27 +8,29 @@ function ArticleList() {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:1000/blog/articles')
-      .then((res) => {
+    axios.get('https://yamakenth-blog-api-server.herokuapp.com/api/articles')
+      .then(res => {
         setArticles(res.data);
       })
-      .catch((err) => {
+      .catch(err => {
         console.log(err);
       });
   }, []);
   
   return (
-    <div>
-      <h4 className='mb-3'>{`Posts (${articles.filter((article) => article.published === true).length})`}</h4>
+    <>
+      <h4 className='mb-3'>
+        {`Posts (${articles.filter(article => article.published === true).length})`}
+      </h4>
       <Row>
         {
           articles
-            .filter((article) => article.published === true)
-            .map((article) => {
+            .filter(article => article.published === true)
+            .map(article => {
               return (
                 <Col sm={6} md={4} xl={3} className='mb-3 d-flex align-items-stretch' key={article._id}>
-                  <Card className='w-100'>
-                    <Card.Body className='d-flex flex-column justify-content-between article-card-body'>
+                  <Card className='w-100 article-card'>
+                    <Card.Body className='d-flex flex-column justify-content-between'>
                       <div className='mb-3'>
                         <Card.Title>{_.unescape(article.title)}</Card.Title>
                         <Card.Subtitle className="mb-2 text-muted">
@@ -49,7 +51,7 @@ function ArticleList() {
             })
         }
       </Row>
-    </div>
+    </>
   );
 }
 
