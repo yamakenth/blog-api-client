@@ -57,7 +57,7 @@ function ArticleList() {
                         </Card.Text>
                       </div>
                       <div>
-                        <Card.Link href={`/articles/${article._id}`}>Read More</Card.Link>
+                        <Card.Link href={`#/articles/${article._id}`}>Read More</Card.Link>
                       </div>
                     </Card.Body>
                   </Card>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap';
 
@@ -11,7 +11,7 @@ import NavBar from './components/NavBar';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <NavBar />
       <Container className='main-content px-3 border-start border-end'>
         <Routes>
@@ -21,7 +21,7 @@ function App() {
         </Routes>
       </Container>
       <Footer />
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
