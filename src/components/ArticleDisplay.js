@@ -18,17 +18,17 @@ function ArticleDisplay() {
   });
 
   useEffect(() => {
-    axios.get(`http://localhost:1000/blog/articles/${id}`)
-      .then((res) => {
+    axios.get(`https://yamakenth-blog-api-server.herokuapp.com/api/articles/${id}`)
+      .then(res => {
         setArticle(res.data);
       })
-      .catch((err) => {
+      .catch(err => {
         console.log(err);
       });
     }, [id]);
 
   return (
-    <div>
+    <>
       <div className='main-article mb-5'>
         <h2>{_.unescape(article.title)}</h2>
         <p className='text-muted mb-0'>By {_.unescape(article.author.username)}</p>
@@ -41,7 +41,7 @@ function ArticleDisplay() {
       </div>
       <CommentDisplay articleid={id}/>
       <CommentCreate articleid={id}/>
-    </div>
+    </>
   );
 }
 
