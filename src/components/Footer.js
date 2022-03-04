@@ -1,4 +1,4 @@
-import { Container, Navbar, Nav } from 'react-bootstrap';
+import { Container, Navbar, Nav, Link } from 'react-bootstrap';
 
 import BrandLogo from './BrandLogo';
 
@@ -12,7 +12,7 @@ function Footer() {
               <i className='bi bi-github'>&#9;GitHub</i>
             </Nav.Link>
           </Nav>
-          <Navbar.Brand href='/' className='mx-0'><BrandLogo />Blog</Navbar.Brand>
+          <Navbar.Brand as={Link} to='/' className='mx-0'><BrandLogo />Blog</Navbar.Brand>
           <Nav>
             <Nav.Link href='https://google.com' target='_blank'>
               <i className='bi bi-gear-wide-connected'>&#9;Admin Page</i>
