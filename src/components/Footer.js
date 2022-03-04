@@ -1,4 +1,5 @@
-import { Container, Navbar, Nav, Link } from 'react-bootstrap';
+import { Container, Navbar, Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import BrandLogo from './BrandLogo';
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import BrandLogo from './BrandLogo';
 
@@ -8,7 +9,7 @@ function NavBar() {
     <header className='fixed-top'>
       <Navbar bg='dark' variant='dark' expand='sm'>
         <Container>
-          <Navbar.Brand href='/'><BrandLogo />Blog</Navbar.Brand>
+          <Navbar.Brand as={Link} to='/'><BrandLogo />Blog</Navbar.Brand>
         </Container>
       </Navbar>
     </header>

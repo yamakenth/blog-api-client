@@ -3,6 +3,7 @@ import axios from 'axios';
 import _ from 'underscore';
 import moment from 'moment';
 import { Card, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 // helper method to slice strings
 function sliceStr(str, len) {
@@ -57,7 +58,7 @@ function ArticleList() {
                         </Card.Text>
                       </div>
                       <div>
-                        <Card.Link href={`#/articles/${article._id}`}>Read More</Card.Link>
+                        <Card.Link as={Link} to={`/articles/${article._id}`}>Read More</Card.Link>
                       </div>
                     </Card.Body>
                   </Card>
