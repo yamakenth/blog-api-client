@@ -13,20 +13,6 @@ header {
   min-height: 90vh;
 }
 
-.logout-button {
-  border: none;
-  background: none;
-  color: #ffffff8c;
-}
-
-.logout-button:hover {
-  color: #ffffffbf;
-}
-
-.nav-username {
-  text-decoration: underline;
-}
-
 .article-card {
   min-height: 250px;
 }
