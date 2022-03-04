@@ -10,7 +10,7 @@
 - Users can create and read comments
 ## Live Demo
 - [Link](https://yamakenth.github.io/blog-api-client/) to client frontend (This repo)
-- [Link]() to client(admin) frontend
+- [Link](https://yamakenth.github.io/blog-api-client-admin/) to client(admin) frontend
 ## Skills/Technology Practiced:
 - React.js
 - HTML
