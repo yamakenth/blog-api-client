@@ -1,5 +1,5 @@
 # Blog API Client
-> A react front-end for a blog web application built using the MERN stack. Live demo [here](https://yamakenth.github.io/blog-api-client/).
+> A React front-end for a blog web application built using the MERN stack. Live demo [here](https://yamakenth.github.io/blog-api-client/).
 ## General Information
 - This is one of two front-end apps served by a back-end
   - Visit the client(admin) front-end repository of this project [here](https://github.com/yamakenth/blog-api-client-admin)
